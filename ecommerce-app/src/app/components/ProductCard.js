@@ -13,8 +13,7 @@ export default function ProductCard({ product }) {
       />
       <h3 className="text-xl text-black font-semibold mb-2">{product?.title || 'Unnamed Product'}</h3>
       <p className="text-gray-700 mb-2">${product?.price || 'N/A'}</p>
-      <p className="text-yellow-500">{'⭐'.repeat(Math.floor(product?.rating || 0))}</p>
-      {console.log('Product Data:', product)}      
+      <p className="text-yellow-500">{'⭐'.repeat(Math.floor(product?.rating || 0))}</p>      
       <Link href={`/product/${product?.id}`}>
         <button className="bg-violet-600 text-white p-2 rounded mt-4 w-full text-center">
           View Details
