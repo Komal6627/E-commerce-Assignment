@@ -2,20 +2,18 @@ import axios from 'axios';
 import Link from 'next/link';
 
 export async function generateMetadata({ params }) {
-  // Ensure that `params` is awaited correctly
-  const { id } = await params; // Ensure that `params` is awaited first
+  const { id } = await params; 
   const product = await axios
     .get(`https://dummyjson.com/products/${id}`)
     .then((res) => res.data);
 
   return {
-    title: product.title, // Dynamically set the page title based on the product name
+    title: product.title, 
   };
 }
 
 export default async function ProductDetails({ params }) {
-  // Await params to correctly access id
-  const { id } = await params; // Ensure that `params` is awaited first
+  const { id } = await params; 
   let product;
   
   try {
